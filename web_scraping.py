@@ -1,3 +1,4 @@
+"""Implement a web scraping script to collect data from the book of answers website.
 import requests
 from bs4 import BeautifulSoup
 import random
