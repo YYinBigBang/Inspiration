@@ -4,6 +4,7 @@ import os
 import json
 import random
 import time
+from pathlib import Path
 
 # LINE Bot SDK
 from linebot.v3 import WebhookHandler
@@ -21,8 +22,8 @@ from linebot.v3.messaging import (
 
 def read_the_book_of_answers():
     """Load the book of answers from the JSON file."""
-
-    json_file_path = '/var/task/the_book_of_answers.json'
+    current_dir = Path(__file__).parent
+    json_file_path = current_dir / 'the_book_of_answers.json'
     with open(json_file_path, 'r', encoding='utf-8') as json_file:
         return json.load(json_file)
 
